@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sorria - Especialistas em Odontologia Premium | Valparaíso de Goiás</title>
+    <meta name="description" content="Sorria com confiança! Tratamentos odontológicos premium em Valparaíso de Goiás. Especialistas em Implantes, Ortodontia e Estética.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0077B6;
+            --primary-light: #90E0EF;
+            --primary-dark: #023E8A;
+            --accent: #FFB703;
+            --text-main: #1d1e2c;
+            --text-light: #5c677d;
+            --bg-light: #F8F9FA;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #128C7E;
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+        /* Header */
+        header {
+            background-color: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '✨';
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 119, 182, 0.1);
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative;
+        }
+
+        /* Decorative blur */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(144, 224, 239, 0.4) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(44px, 5vw, 64px);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-light);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .hero-image img {
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        /* CTA Button */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 40px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            padding: 16px 28px;
+            border-radius: 50px;
+            display: inline-flex;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        /* Services */
+        .services {
+            padding: 120px 0;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(144, 224, 239, 0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 119, 182, 0.1);
+            border-color: rgba(0, 119, 182, 0.2);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 54px;
+            margin-bottom: 24px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .service-link:hover {
+            color: var(--primary-dark);
+            gap: 12px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            color: var(--white);
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+        
+        .testimo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimo-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .testimo-card p {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimo-card .author {
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d1b2a;
+            color: var(--white);
+            padding: 100px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 24px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.6);
+            max-width: 320px;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .footer-socials a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.6);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 15px;
+        }
+
+        /* SVG Icons */
+        .icon-svg {
+            width: 20px; height: 20px; fill: currentColor;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 32px;
+            }
+            .social-proof {
+                margin: 32px auto 0;
+            }
+            .hero-image::after {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-text {
+                margin: 0 auto 30px;
+            }
+            .footer-socials {
+                justify-content: center;
+            }
+            .footer-links li {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none; /* Hide socials on mobile header for space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">Dr. Sorria</div>
+            <div class="nav-links">
+                <a href="#" class="social-icon" title="Instagram">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="social-icon" title="Facebook">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+                <a href="https://wa.me/5561996580278?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." class="btn-header">Agendar Avaliação</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text animate">
+                <h1>O seu melhor sorriso com a excelência que você merece.</h1>
+                <p>Equipe especializada, tecnologia de ponta e um atendimento acolhedor para transformar a sua saúde bucal em Valparaíso de Goiás.</p>
+                <a href="https://wa.me/5561996580278?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." class="btn-whatsapp">
+                    Falar com Especialista
+                </a>
+                <br>
+                <div class="social-proof">
+                    <div class="stars">★★★★★</div>
+                    <div><strong>4.8</strong> de aprovação no Google (120+ clientes)</div>
+                </div>
+            </div>
+            <div class="hero-image animate delay-1">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Consultório Odontológico Dr. Sorria">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-header animate">
+                <h2>Tratamentos Especializados</h2>
+                <p>Nossa equipe domina as técnicas mais modernas da odontologia para oferecer conforto, segurança e resultados definitivos.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate delay-1">
+                    <div class="service-icon">🦷</div>
+                    <h3>Implantes Dentários</h3>
+                    <p>Recupere a segurança para mastigar e sorrir com implantes de titânio de altíssima durabilidade e aspecto natural.</p>
+                    <a href="https://wa.me/5561996580278?text=Olá!%20Quero%20saber%20mais%20sobre%20Implantes." class="service-link">Saber mais →</a>
+                </div>
+                <div class="service-card animate delay-2">
+                    <div class="service-icon">✨</div>
+                    <h3>Lentes e Facetas</h3>
+                    <p>Harmonia perfeita para os seus dentes. Corrija cor, formato e espaçamento em poucas sessões com resina ou porcelana.</p>
+                    <a href="https://wa.me/5561996580278?text=Olá!%20Quero%20saber%20mais%20sobre%20Facetas." class="service-link">Saber mais →</a>
+                </div>
+                <div class="service-card animate delay-3">
+                    <div class="service-icon">😁</div>
+                    <h3>Ortodontia Avançada</h3>
+                    <p>Alinhadores invisíveis e aparelhos estéticos para corrigir o seu sorriso de forma rápida, previsível e discreta.</p>
+                    <a href="https://wa.me/5561996580278?text=Olá!%20Quero%20saber%20mais%20sobre%20Aparelhos." class="service-link">Saber mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos pacientes dizem</h2>
+            <div class="testimo-grid">
+                <div class="testimo-card">
+                    <p>"Excelente atendimento, profissionais maravilhosos! A clínica é impecável e o resultado superou minhas expectativas."</p>
+                    <div class="author">- Maria Silva</div>
+                </div>
+                <div class="testimo-card">
+                    <p>"Fiz meus implantes aqui e recuperei minha autoestima. A equipe me deixou super tranquila do início ao fim."</p>
+                    <div class="author">- João Pereira</div>
+                </div>
+                <div class="testimo-card">
+                    <p>"Lugar perfeito! Tecnologia super avançada e dentistas atenciosos. Vale cada centavo!"</p>
+                    <div class="author">- Ana Costa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">✨ Dr. Sorria</div>
+                    <p class="footer-text">Clínica odontológica de excelência em Valparaíso de Goiás. Nosso compromisso é com a sua saúde e autoestima, oferecendo um atendimento humanizado e focado em resultados reais.</p>
+                    <div class="footer-socials">
+                        <a href="#" title="Instagram">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" title="Facebook">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li>📞 (61) 99658-0278</li>
+                        <li>✉️ contatodrsorria@gmail.com</li>
+                        <li>📍 Shopping Sul, Parque Esplanada III</li>
+                        <li>Valparaíso de Goiás - GO</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Horário</h4>
+                    <ul class="footer-links">
+                        <li>🕒 Seg a Sex: 08:00 - 18:00</li>
+                        <li>🕒 Sábados: 08:00 - 12:00</li>
+                        <li>⛔ Domingos: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Dr. Sorria Odontologia. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5561996580278?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." class="floating-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+
+<!-- PROSPECTOR-EDITOR-START -->
+<style id="pe-style">
+#pe-bar{position:fixed;top:0;left:0;right:0;z-index:99999;background:#111;color:#fff;font:14px/1 -apple-system,Segoe UI,Roboto,sans-serif;display:flex;align-items:center;gap:16px;padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#pe-bar button{background:#22c55e;color:#fff;border:0;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer}
+#pe-bar button:hover{background:#16a34a}
+body{margin-top:44px !important}
+.pe-hover{outline:2px dashed #22c55e !important;outline-offset:2px;cursor:pointer}
+[contenteditable="true"]:focus{outline:2px solid #3b82f6 !important;outline-offset:2px}
+</style>
+<div id="pe-bar">
+  <strong>Modo edição</strong>
+  <span>Clique em textos para editar · clique em imagens para trocar</span>
+  <button id="pe-export" type="button">Exportar página</button>
+</div>
+<input type="file" id="pe-file" accept="image/*" style="display:none">
+<script id="pe-script">
+(function(){
+  var TEXT='h1,h2,h3,h4,h5,h6,p,li,a,span,button,td,th,figcaption,blockquote,strong,em';
+  document.querySelectorAll(TEXT).forEach(function(el){
+    if(el.closest('#pe-bar'))return;
+    if(el.children.length===0||el.childElementCount<=1){
+      el.addEventListener('click',function(e){
+        if(el.tagName==='A'||el.tagName==='BUTTON')e.preventDefault();
+        el.setAttribute('contenteditable','true');el.focus();
+      });
+      el.addEventListener('mouseenter',function(){el.classList.add('pe-hover')});
+      el.addEventListener('mouseleave',function(){el.classList.remove('pe-hover')});
+      el.addEventListener('blur',function(){el.removeAttribute('contenteditable')});
+    }
+  });
+  var fileInput=document.getElementById('pe-file'),currentImg=null;
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();currentImg=img;fileInput.click()});
+    img.addEventListener('mouseenter',function(){img.classList.add('pe-hover')});
+    img.addEventListener('mouseleave',function(){img.classList.remove('pe-hover')});
+  });
+  fileInput.addEventListener('change',function(){
+    var f=fileInput.files[0];if(!f||!currentImg)return;
+    var r=new FileReader();
+    r.onload=function(){currentImg.src=r.result;if(currentImg.srcset)currentImg.removeAttribute('srcset')};
+    r.readAsDataURL(f);fileInput.value='';
+  });
+  document.getElementById('pe-export').addEventListener('click',function(){
+    var doc=document.documentElement.cloneNode(true);
+    ['#pe-bar','#pe-style','#pe-script','#pe-file'].forEach(function(s){var n=doc.querySelector(s);if(n)n.remove()});
+    doc.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
+    doc.querySelectorAll('.pe-hover').forEach(function(n){n.classList.remove('pe-hover')});
+    var html='<!DOCTYPE html>\n'+doc.outerHTML;
+    var blob=new Blob([html],{type:'text/html'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='index.html';a.click();
+  });
+})();
+</script>
+<!-- PROSPECTOR-EDITOR-END -->
+</body>
+
+</html>
